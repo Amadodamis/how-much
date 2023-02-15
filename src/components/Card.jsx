@@ -3,19 +3,17 @@ import user from "../img/user.png"
 
 function Card() {
     return (
-        <div class="card">
-            <div class="image-content">
-                <span class="overlay"></span>
-                <div class="card-image">
-                    <img src={user} alt="" class="card-img" />
+        <div className="card">
+            <div className="image-content">
+                <span className="overlay"></span>
+                <div className="card-image">
+                    <img src={user} alt="" className="card-img" />
                 </div>
             </div>
 
-            <div class="card-content">
-                <h2 class="name">Jorge Roberto</h2>
-                <p class="description">Jorge Roberto le tiene que dar 500$ a Manuela</p>
-
-                <button class="button">View More</button>
+            <div className="card-content">
+                <h2 className="name">Jorge Roberto</h2>
+                <p className="description">Jorge Roberto le tiene que dar 500$ a Manuela</p>
             </div>
         </div>
     );

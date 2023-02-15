@@ -3,7 +3,7 @@ import "./cssComponents/header.css"
 function Header() {
     return (
         <div  className="header">
-            <h2 className="title">Cuanto y a quien le tiene que dar dinero?</h2>
+            <h2 className="title">¿Quién le tiene que dar dinero a quién?</h2>
         </div>
     );
 }

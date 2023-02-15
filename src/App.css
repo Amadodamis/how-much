@@ -1,6 +1,22 @@
 .App {
-  background-image: url(./img/moneyPattern.png);
+  background-color: var(--fondo);
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/**
+ background-image: url(./img/moneyPattern.png);
+*/
+footer{
+  height: 60px;
+  width: 100%;
+  background-color: black;
+  margin-top: 30px;
+}
+
+.p-footer{
+  margin-top: 35px;
+  color: white;
+  text-align: end;
 }

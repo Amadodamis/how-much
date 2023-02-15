@@ -29,7 +29,7 @@
   top: 0;
   height: 100%;
   width: 100%;
-  background-color: #4070F4;
+  background-color: rgba(79, 156, 85, 0.7);
   border-radius: 25px 25px 0 25px;
   
 }
@@ -47,7 +47,7 @@
   width: 100%;
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid #4070F4;
+  border: 4px solid rgba(79, 156, 85, 0.7);
 }
 .name{
   font-size: 18px;
@@ -62,20 +62,6 @@
 }
 
 
-.button{
-  border: none;
-  font-size: 16px;
-  color: #FFF;
-  padding: 8px 16px;
-  background-color: #4070F4;
-  border-radius: 6px;
-  margin: 14px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.button:hover{
-  background: #265DF2;
-}
 
 .card-wrapper{
   margin-bottom: 5px;
