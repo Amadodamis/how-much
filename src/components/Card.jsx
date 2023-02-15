@@ -1,9 +1,11 @@
 import "./cssComponents/card.css"
 import user from "../img/user.png"
 
-function Card() {
+function Card(props) {
+    const { nombreParticipante, pago } = props
+
     return (
-        <div className="card">
+        <div className="card" >
             <div className="image-content">
                 <span className="overlay"></span>
                 <div className="card-image">
@@ -12,8 +14,8 @@ function Card() {
             </div>
 
             <div className="card-content">
-                <h2 className="name">Jorge Roberto</h2>
-                <p className="description">Jorge Roberto le tiene que dar 500$ a Manuela</p>
+                <h2 className="name"> {nombreParticipante} </h2>
+                <p className="description">{nombreParticipante} pago {pago}$ y le tiene que dar 400 a Manuela.</p>
             </div>
         </div>
     );

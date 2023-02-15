@@ -6,6 +6,7 @@
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 15px;
     align-items: center;
+    min-height: 100vh;
 }
 
 

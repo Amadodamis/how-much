@@ -12,27 +12,34 @@ function Body() {
     const agregarParticipante = (e) => {
         e.preventDefault();
         if (e.target.nombre.value != "" & e.target.plata.value != "") {
-            console.log("no dio vacio")
-            let nuevoParticipante = e.target.nombre.value;
+            let nombreNuevoParticipante = e.target.nombre.value;
             let nuevoMonto = parseInt(e.target.plata.value)
+            let nuevoParticipante = {
+                nombre: nombreNuevoParticipante,
+                monto: nuevoMonto
+            }
             setParticipante([...participantes, nuevoParticipante])
             setNuevoMonto(monto + nuevoMonto)
             e.target.nombre.value = ""
             e.target.plata.value = ""
-        }else{
-            console.log("dio vacio")
+        } else {
+            console.log("Uno de los 2 datos fue vacio")
         }
 
 
     }
 
-    /*
 
-    useEffect(() => {
-        console.log("Se monto el componente")
+    const mostrarParticipantes = participantes.map((participante, i) => {
+        return (
+            <Card key={i}
+                nombreParticipante={participante.nombre}
+                pago={participante.monto}
+            />
+        )
+    })
 
-    }, [participantes])
-*/
+    console.log(monto)
 
     return (
         <section className="body">
@@ -41,10 +48,8 @@ function Body() {
             />
 
             <div className="row2">
-                {participantes !== [] &
-                    <Card />
 
-                }
+                {participantes.length > 0 && mostrarParticipantes}
 
             </div>
         </section>
