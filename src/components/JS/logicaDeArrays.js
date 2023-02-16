@@ -1,40 +1,23 @@
-/*let monto = 40000;
-
+/*
 let arrayParticipantes = [
     {
-        nombre: "Arturo",
-        monto: 8000,
+        nombre: "Amado",
+        monto: 1000,
         tieneQueDarle: [],
     },
     {
-        nombre: "Lucia",
-        monto: 500,
-        tieneQueDarle: [],
-    },
-    {
-        nombre: "Maria",
-        monto: 8000,
-        tieneQueDarle: [],
-    },
-    {
-        nombre: "Lucas",
-        monto: 15000,
-        tieneQueDarle: [],
-    },
-    {
-        nombre: "Pedro",
+        nombre: "Marcos",
         monto: 500,
         tieneQueDarle: [],
     },
     {
         nombre: "Martin",
-        monto: 8000,
+        monto: 1500,
         tieneQueDarle: [],
     },
-
 ]
-
 */
+    
 
 
 function devolucion(aParticipantes, m) {
@@ -62,7 +45,7 @@ function devolucion(aParticipantes, m) {
 
         while (arrayPagaronDeMas.length > 0 && faltaPagar > 0) {
 
-            
+
             //Primero vemos cuanto falta que le paguen a esta persona
             let faltaQueLePaguen = arrayPagaronDeMas[0].monto - montoPorPersona
 
@@ -81,10 +64,10 @@ function devolucion(aParticipantes, m) {
 
                 //Saco a la persona la cual ya se la saldo la deuda, y lo pusheo en el array Final
                 arrayPagaronDeMas.shift()
-                
+
             }
             else if (faltaPagar == faltaQueLePaguen) {
-                
+
                 let pague = {
                     nombre: arrayPagaronDeMas[0].nombre,
                     monto: faltaPagar,
@@ -98,32 +81,37 @@ function devolucion(aParticipantes, m) {
             }
             //Este es el caso en el que la persona no llega a pagar lo que le falta a la otra persona
             else {
-                
+
 
                 let pague = {
                     nombre: arrayPagaronDeMas[0].nombre,
-                    monto:faltaPagar,
+                    monto: faltaPagar,
                 }
                 arrayPagaronDeMenos[i].tieneQueDarle.push(pague)
                 faltaPagar = 0;
             }
 
-              
+
 
         }
 
     }
 
-    arrayFinal=[...arrayFinal,...arrayPagaronDeMenos]
-    
-    
+    arrayFinal = [...arrayFinal, ...arrayPagaronDeMenos]
+
+
     return arrayFinal
 }
 
+/*
+let monto = 0;
+for (let index = 0; index < arrayParticipantes.length; index++) {
+    monto = monto + arrayParticipantes[index].monto;
 
-
-
+}
+*/
 
 //let array=devolucion(arrayParticipantes, monto)
 
-//export default devolucion
+
+export default devolucion
