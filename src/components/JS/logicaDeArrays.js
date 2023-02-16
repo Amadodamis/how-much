@@ -21,6 +21,11 @@ let arrayParticipantes = [
 
 
 function devolucion(aParticipantes, m) {
+    
+    //borro el contenido de la anterior division
+    for (let index = 0; index < aParticipantes.length; index++) {
+        aParticipantes[index].tieneQueDarle=[]
+    }
 
     //informacion inicial, usamos un nuevo array para no modificar el primero
     let arrayParticipantesScope = [...aParticipantes]

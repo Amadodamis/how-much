@@ -9,7 +9,7 @@ function Body() {
 
     const [participantes, setParticipante] = useState([])
     const [monto, setNuevoMonto] = useState(0)
-    const [arrayParticipantes,setArrayParticipantes]=useState([])
+    const [arrayParticipantes, setArrayParticipantes] = useState([])
 
     const agregarParticipante = (e) => {
         e.preventDefault();
@@ -34,11 +34,15 @@ function Body() {
     }
 
     useEffect(() => {
-        if(participantes.length>1){
-            let arrayExtra=devolucion(participantes,monto)
-            
+        if (participantes.length > 1) {
+            let arrayScope = [...participantes]
+            let arrayExtra = devolucion(arrayScope, monto)
+
+            setArrayParticipantes([arrayExtra])
+            arrayExtra = null;
+            arrayScope = null;
         }
-   }, [participantes])
+    }, [participantes])
 
 
 
@@ -52,7 +56,6 @@ function Body() {
         )
     })
 
-    console.log(participantes)
     return (
         <section className="body">
             <AgregarParticipanteComponent
