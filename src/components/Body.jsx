@@ -35,11 +35,11 @@ function Body() {
             <Card key={i}
                 nombreParticipante={participante.nombre}
                 pago={participante.monto}
+                numeroParticipantes={participantes.length}
             />
         )
     })
 
-    console.log(monto)
 
     return (
         <section className="body">
