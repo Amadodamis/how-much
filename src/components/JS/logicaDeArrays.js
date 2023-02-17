@@ -1,22 +1,6 @@
-/*
-let arrayParticipantes = [
-    {
-        nombre: "Amado",
-        monto: 1000,
-        tieneQueDarle: [],
-    },
-    {
-        nombre: "Marcos",
-        monto: 500,
-        tieneQueDarle: [],
-    },
-    {
-        nombre: "Martin",
-        monto: 1500,
-        tieneQueDarle: [],
-    },
-]
-*/
+
+
+
     
 
 
@@ -108,15 +92,38 @@ function devolucion(aParticipantes, m) {
     return arrayFinal
 }
 
-/*
+
+
+/*************************************Hardcodeado de una prueba con lo que recibe**********************
+    
 let monto = 0;
 for (let index = 0; index < arrayParticipantes.length; index++) {
     monto = monto + arrayParticipantes[index].monto;
 
 }
+
+let arrayParticipantes = [
+    {
+        nombre: "Amado",
+        monto: 10,
+        tieneQueDarle: [],
+    },
+    {
+        nombre: "Marcos",
+        monto: 1000,
+        tieneQueDarle: [],
+    },
+    {
+        nombre: "Martin",
+        monto: 2500,
+        tieneQueDarle: [],
+    },
+]
+
+let array=devolucion(arrayParticipantes, monto)
+
 */
 
-//let array=devolucion(arrayParticipantes, monto)
 
 
 export default devolucion

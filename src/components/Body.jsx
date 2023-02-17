@@ -38,20 +38,34 @@ function Body() {
             let arrayScope = [...participantes]
             let arrayExtra = devolucion(arrayScope, monto)
 
-            setArrayParticipantes([arrayExtra])
+            setArrayParticipantes(arrayExtra)
             arrayExtra = null;
             arrayScope = null;
         }
     }, [participantes])
 
+    
 
-
-    const mostrarParticipantes = participantes.map((participante, i) => {
+    const mostrarParticipante = participantes.map((participante, i) => {
         return (
             <Card key={i}
+                montoTotal={monto}
                 nombreParticipante={participante.nombre}
                 pago={participante.monto}
+                tieneQueDarle={participante.tieneQueDarle}
                 numeroParticipantes={participantes.length}
+            />
+        )
+    })
+
+    const mostrarParticipantes = arrayParticipantes.map((participante, j) => {
+        return (
+            <Card key={j}
+                montoTotal={monto}
+                nombreParticipante={participante.nombre}
+                pago={participante.monto}
+                tieneQueDarle={participante.tieneQueDarle}
+                numeroParticipantes={arrayParticipantes.length}
             />
         )
     })
@@ -64,7 +78,9 @@ function Body() {
 
             <div className="row2">
 
-                {participantes.length > 0 && mostrarParticipantes}
+                {participantes.length >= 0  && participantes.length <2 && mostrarParticipante}
+
+                {arrayParticipantes.length >= 2 && mostrarParticipantes}
 
             </div>
         </section>
