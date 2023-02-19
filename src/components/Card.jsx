@@ -3,17 +3,16 @@ import "./cssComponents/card.css"
 import user from "../img/user.png"
 
 function Card(props) {
-    const { nombreParticipante, pago, numeroParticipantes, montoTotal, tieneQueDarle } = props
+    const { nombreParticipante, pago, numeroParticipantes, tieneQueDarle } = props
     const [texto, setTexto] = useState("")
-    console.log(pago)
-    console.log(tieneQueDarle)
+    console.log(numeroParticipantes)
 
     useEffect(() => {
-        if (numeroParticipantes == 1) {
+        if (numeroParticipantes === 1) {
             setTexto(".")
         }
         if (numeroParticipantes >= 2) {
-            if (tieneQueDarle.length==0) {
+            if (tieneQueDarle.length===0) {
                 setTexto(".")
             } else {
 
