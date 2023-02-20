@@ -30,7 +30,7 @@ function Card(props) {
             }
         }
 
-    }, [numeroParticipantes])
+    }, [numeroParticipantes,tieneQueDarle])
 
 
     return (
@@ -44,7 +44,7 @@ function Card(props) {
 
             <div className="card-content">
                 <h2 className="name"> {nombreParticipante} </h2>
-                <p className="description">{nombreParticipante} pago {pago}$ {texto} </p>
+                <p className="description">{nombreParticipante} pagó {pago}$ {texto} </p>
             </div>
         </div>
     );

@@ -39,15 +39,15 @@ function Body() {
     useEffect(() => {
         if (participantes.length > 0) {
             let arrayScope = [...participantes]
-            
+
             let arrayExtra = devolucion(arrayScope, monto)
-            
+
             setArrayParticipantes(arrayExtra)
             arrayExtra = null;
             arrayScope = null;
         }
 
-    }, [participantes])
+    }, [participantes,monto])
 
 
 
@@ -62,20 +62,22 @@ function Body() {
         )
     })
 
-    
-console.log(participantes)
+
+    console.log(participantes)
     return (
-        <section className="body">
-            <AgregarParticipanteComponent
-                agregarParticipante={agregarParticipante}
-                monto={monto}
-            />
+        <section className="container-body">
+            <div className="body">
+                <AgregarParticipanteComponent
+                    agregarParticipante={agregarParticipante}
+                    //monto={monto}
+                />
 
-            <div className="row2">
+                <div className="row2">
 
-         
-                {arrayParticipantes.length >= 1 && mostrarParticipantes}
 
+                    {arrayParticipantes.length >= 1 && mostrarParticipantes}
+
+                </div>
             </div>
         </section>
     );

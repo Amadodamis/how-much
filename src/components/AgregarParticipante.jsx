@@ -2,12 +2,12 @@ import "./cssComponents/agregarParticipante.css"
 
 function AgregarParticipanteComponent(props) {
     
-    const { agregarParticipante,monto } = props
+    const { agregarParticipante/*,monto*/ } = props
 
 
     return (
         <div className="row1">
-            <h2 className="h2-agregar">AGREGAR PARTICIPANTE monto total: {monto} </h2>
+            <h2 className="h2-agregar">AGREGAR PARTICIPANTE</h2>
             <form className="container-inputs-buttons" onSubmit={agregarParticipante}>
 
                 <input placeholder="Nombre" type="text" name="nombre" className="input" />

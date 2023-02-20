@@ -1,17 +1,29 @@
+.container-body{
+
+width: 100%;
+margin: 0px;
+background-image: url(../../img/moneyPattern.png);
+background-repeat:cover;
+display: flex;
+justify-content: center;
+
+}
+
 .body {
     width: 90vw;
-    margin-top: 25px;
-    margin-left: 25px;
-    margin-right: 25px;
-    background-color: rgba(0, 0, 0, 0.5);
+    margin-top: 25px;  
+    margin-bottom: 25px;
+    background-color: rgba(37, 40, 57, 0.95);
     border-radius: 15px;
-    align-items: center;
     min-height: 100vh;
 }
 
 
 .row2 {
-    margin: 5px;
+    
+    margin-top: 45px;
+    margin-right: 155px;
+    margin-left: 155px;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
