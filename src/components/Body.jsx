@@ -15,7 +15,7 @@ function Body() {
     const agregarParticipante = (e) => {
         e.preventDefault();
 
-        if (e.target.nombre.value !== "" & e.target.plata.value !== "") {
+        if (e.target.nombre.value !== "" && e.target.plata.value !== "" && e.target.plata.value >= 0) {
             let nombreNuevoParticipante = e.target.nombre.value;
             let nuevoMonto = parseInt(e.target.plata.value)
             let nuevoParticipante = {
@@ -31,7 +31,17 @@ function Body() {
 
 
         } else {
-            console.log("Uno de los 2 datos fue vacio")
+
+            //console.log("Uno de los 2 datos fue vacio")
+            if (e.target.nombre.value === "") {
+                alert("Se debe introducir un nombre")
+            } else if (e.target.plata.value === "") {
+                alert("Se debe introducir un monto")
+            } else {
+                alert("El monto debe ser mayor o igual a cero")
+                e.target.plata.value = ""
+            }
+
         }
 
     }
@@ -47,7 +57,7 @@ function Body() {
             arrayScope = null;
         }
 
-    }, [participantes,monto])
+    }, [participantes, monto])
 
 
 
@@ -69,7 +79,7 @@ function Body() {
             <div className="body">
                 <AgregarParticipanteComponent
                     agregarParticipante={agregarParticipante}
-                    //monto={monto}
+                //monto={monto}
                 />
 
                 <div className="row2">
