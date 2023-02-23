@@ -1,16 +1,23 @@
 import { useEffect, useState } from "react";
 import "./cssComponents/card.css"
 import user from "../img/user.png"
-import textsFunction from "./JS/cardTextsFunction";
+
 
 function Card(props) {
     const { nombreParticipante, pago, numeroParticipantes, tieneQueDarle, leng } = props
-    const [texto, setTexto] = useState("")
-    const [text2, setTexto2] = useState(nombreParticipante + " pagó " + pago + "$")
 
+
+    const [texto, setTexto] = useState("")
+
+
+
+    //Texto default para el primer participante.
+    const [text2, setTexto2] = useState(nombreParticipante + " pagó " + pago + "$")
     useEffect(() => {
         leng === "ENG" ? setTexto2(nombreParticipante + " paid " + pago + "$") : setTexto2(nombreParticipante + " pagó " + pago + "$")
     }, [leng, nombreParticipante, pago])
+
+
 
     useEffect(() => {
         if (numeroParticipantes === 1) {
@@ -19,9 +26,51 @@ function Card(props) {
         if (numeroParticipantes >= 2) {
             if (tieneQueDarle.length === 0) {
                 setTexto(".")
-            }
-            else {
-                setTexto(textsFunction(leng, tieneQueDarle))
+            } else {
+
+                if (leng === "ESP") {
+
+
+                    let texto2 = "y tiene que darle "
+
+                    for (let index = 0; index < tieneQueDarle.length; index++) {
+
+                        texto2 = texto2 + tieneQueDarle[index].monto + " a " + tieneQueDarle[index].nombre
+
+                        if ((index + 1) < tieneQueDarle.length) {
+                            texto2 = texto2 + " tambien le tiene que dar "
+                        }
+                        else {
+                            texto2 = texto2 + "."
+                        }
+
+                    }
+                    setTexto(texto2)
+                } else {
+
+
+                    let texto2 = "and he/she has to give "
+
+                    for (let index = 0; index < tieneQueDarle.length; index++) {
+
+                        texto2 = texto2 + tieneQueDarle[index].monto + "$ " + " to " + tieneQueDarle[index].nombre;
+
+                        if ((index + 1) < tieneQueDarle.length) {
+                            texto2 = texto2 + " he/she also has to give "
+                        }
+                        else {
+                            texto2 = texto2 + "."
+                        }
+
+                    }
+
+                    setTexto(texto2)
+
+
+                }
+
+
+
             }
         }
 
