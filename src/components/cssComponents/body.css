@@ -1,30 +1,141 @@
-.container-body{
+.container-body {
 
-width: 100%;
-margin: 0px;
-background-image: url(../../img/moneyPattern.png);
-background-repeat:cover;
-display: flex;
-justify-content: center;
+    width: 100%;
+    margin: 0px;
+    background-image: url(../../img/moneyPattern.png);
+    background-repeat: cover;
+    display: flex;
+    justify-content: center;
 
 }
 
 .body {
     width: 90vw;
-    margin-top: 25px;  
+    margin-top: 25px;
     margin-bottom: 25px;
     background-color: rgba(37, 40, 57, 0.95);
     border-radius: 15px;
     min-height: 100vh;
+    
+
 }
 
 
 .row2 {
-    
+
     margin-top: 45px;
     margin-right: 155px;
     margin-left: 155px;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+}
+
+
+
+
+/* SWITCHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH*/
+
+.switch {
+    position: relative;
+    margin-top:10px;
+    float: right;
+    margin-right: 15px;
+
+}
+
+.switch>span {
+    position: absolute;
+    top: 6px;
+    pointer-events: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: uppercase;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, .06);
+    width: 50%;
+    text-align: center;
+}
+
+/*aca va on*/
+input.check-toggle-round-flat:checked~.on {
+    color: rgba(79, 156, 85, 0.7);
+}
+
+input.check-toggle-round-flat:checked~.off {
+    color: rgba(79, 156, 85, 0.7);
+}
+
+.switch>span.off {
+    left: 0;
+    padding-left: 2px;
+    color: rgba(79, 156, 85, 0.7);
+}
+
+/*aca va on*/
+.switch>span.on {
+    right: 0;
+    padding-right: 4px;
+    color: rgba(79, 156, 85, 0.7);
+}
+
+.check-toggle {
+    position: absolute;
+    margin-left: -9999px;
+    visibility: hidden;
+}
+
+.check-toggle+label {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+input.check-toggle-round-flat+label {
+    padding: 2px;
+    width: 97px;
+    height: 35px;
+    background-color: rgba(37, 40, 57, 0.95);
+    -webkit-border-radius: 60px;
+    -moz-border-radius: 60px;
+    -ms-border-radius: 60px;
+    -o-border-radius: 60px;
+    border-radius: 60px;
+}
+
+input.check-toggle-round-flat+label:before,
+input.check-toggle-round-flat+label:after {
+    display: block;
+    position: absolute;
+    content: "";
+}
+
+input.check-toggle-round-flat+label:after {
+    top: 3px;
+    left: 3px;
+    bottom: 3px;
+    width: 45px;
+    background-color: #fff;
+    -webkit-border-radius: 52px;
+    -moz-border-radius: 52px;
+    -ms-border-radius: 52px;
+    -o-border-radius: 52px;
+    border-radius: 52px;
+    -webkit-transition: margin 0.2s;
+    -moz-transition: margin 0.2s;
+    -o-transition: margin 0.2s;
+    transition: margin 0.2s;
+}
+
+
+
+
+
+input.check-toggle-round-flat:checked+label:after {
+    margin-left: 44px;
 }

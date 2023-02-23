@@ -4,12 +4,25 @@ import "./cssComponents/body.css"
 import AgregarParticipanteComponent from "./AgregarParticipante";
 import Card from "./Card";
 import devolucion from "./JS/functionPago";
+import SwitchLeng from "./SwitchLeng";
+import { textsAlertsBody, alerts } from "./JS/textsBody.js";
 
-function Body() {
 
+function Body(props) {
+    const { leng, toggleLeng } = props
     const [participantes, setParticipante] = useState([])
     const [monto, setNuevoMonto] = useState(0)
     const [arrayParticipantes, setArrayParticipantes] = useState([])
+
+
+    //Textos ENG/SPA BODY
+    const [texto, setTexto] = useState(textsAlertsBody(leng))
+
+    useEffect(() => {
+        setTexto(textsAlertsBody(leng))
+
+    }, [leng])
+
 
 
     const agregarParticipante = (e) => {
@@ -31,21 +44,16 @@ function Body() {
 
 
         } else {
-
-            //console.log("Uno de los 2 datos fue vacio")
-            if (e.target.nombre.value === "") {
-                alert("Se debe introducir un nombre")
-            } else if (e.target.plata.value === "") {
-                alert("Se debe introducir un monto")
-            } else {
-                alert("El monto debe ser mayor o igual a cero")
-                e.target.plata.value = ""
-            }
-
+            //Si uno de los datos ingresados en el input es vacio o valor invalido, genera un alert.
+            alerts(e.target.nombre.value, e.target.plata.value, texto.errorNombre, texto.errorMonto, texto.errorMontoDos)
+            
         }
 
     }
 
+
+
+    //Factorizacion del array
     useEffect(() => {
         if (participantes.length > 0) {
             let arrayScope = [...participantes]
@@ -60,7 +68,7 @@ function Body() {
     }, [participantes, monto])
 
 
-
+    //Rendereizacion del array
     const mostrarParticipantes = arrayParticipantes.map((participante, j) => {
         return (
             <Card key={j}
@@ -68,16 +76,20 @@ function Body() {
                 pago={participante.monto}
                 numeroParticipantes={arrayParticipantes.length}
                 tieneQueDarle={participante.tieneQueDarle}
+                leng={leng}
             />
         )
     })
 
 
-    console.log(participantes)
+
     return (
         <section className="container-body">
             <div className="body">
+                <SwitchLeng leng={leng} toggleLeng={toggleLeng} />
+
                 <AgregarParticipanteComponent
+                    leng={leng}
                     agregarParticipante={agregarParticipante}
                 //monto={monto}
                 />
