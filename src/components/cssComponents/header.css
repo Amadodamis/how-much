@@ -1,7 +1,15 @@
-.title{
+.header {
+    height: 9vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
     text-align: center;
-    color: var( --primary-color);
-    font-size: 10vh;
+    color: var(--primary-color);
+    font-size: 60px;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
 

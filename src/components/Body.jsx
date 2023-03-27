@@ -46,7 +46,7 @@ function Body(props) {
         } else {
             //Si uno de los datos ingresados en el input es vacio o valor invalido, genera un alert.
             alerts(e.target.nombre.value, e.target.plata.value, texto.errorNombre, texto.errorMonto, texto.errorMontoDos)
-            
+
         }
 
     }
@@ -95,10 +95,7 @@ function Body(props) {
                 />
 
                 <div className="row2">
-
-
                     {arrayParticipantes.length >= 1 && mostrarParticipantes}
-
                 </div>
             </div>
         </section>
